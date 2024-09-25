@@ -28,24 +28,28 @@ double com(double v)
 
 int main ()
 {
-    double a, b , c , D,x1 , x2 , x3 , x4 ;
-    std::cout << "Введите значения a , b , c для уравнения вида : ax^4 + bx^2 + c = 0 " << std::endl;
+    double a, b , c , D,x1 , x2 , x3 , x4 , y1 , y2;
+    std::cout << "Введите значения a , b , c для уравнения вида : ax^4 + bx^3 + cx^2 + bx + c = 0 " << std::endl;
     std::cin >> a >> b >> c;
-    D = (b * b )- (4 * a * c);
+    D = (b * b )- (4 * a * c) + (8 * a * a);
     if (D > 0)
     {
-        x1 = com((-b - com(D)) / 2 * a);
-        x2 =  -x1;
-        x3 = com((-b + com(D)) / 2 * a);
-        x4 = -x3;
+        y1 = (-b + com(D)) / 2 * a ;
+        y2 = -(b + com(D)) / 2 * a ;
+        x1 = (-y1 - com(y1 * y1 - 4 )) / 2 ;
+        x2 = (-y1 + com(y1 * y1 - 4 )) / 2 ;
+        y2 = (-b + com(D)) / 2 * a;
+        x3 = (-y2 - com(y2 * y2 - 4 )) / 2;
+        x4 = (-y2 + com(y2 * y2 - 4 )) / 2;
         std::cout << x1 << " " << x2 << " "<< x3 << " " << x4;
     }
     else 
     {
         if (D = 0)
         {
-            x1 = com(-b/(2*a));
-            x2 = -x1;
+            y1 = -b/(2*a);
+            x1 = (-y1 - com(y1 * y1 - 4 )) / 2 ;
+            x2 = (-y1 + com(y1 * y1 - 4 )) / 2 ;
             std::cout << x1 << " "<< x2;
         }
         else
