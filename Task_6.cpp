@@ -4,12 +4,12 @@
 
 int main()
 {
-    double A,  D ,x , y , z ,itog , p , K , C , B , h ;
+    double A,  D ,x , y , z ,itog , p , K , C , B , h,d ;
     std::cout << "Введите 2 значения "<< std::endl;
-    std::cin >> x >> p >> A  >> B >> h >> K >> C >> D ;
-    A = x + p;
-    B = log(h);
-    itog = 0.78*B + A * A * A / K /C / D;
+    std::cin >> x >> d >> K >> C ;
+    A = log10(x);
+    B = x + exp(d);
+    itog = (A + B) - (C * C / K);
     std::cout << itog ;
 
 }
